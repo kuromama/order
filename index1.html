@@ -1,0 +1,174 @@
+<!doctype html>
+<html
+ lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="bootstrap/jquery-3.4.1.min.js"></script>
+<script src="bootstrap/popper.min.js"></script>
+<script src="bootstrap/bootstrap.min.js"></script>
+
+   <!-- 字型改良 -->
+   <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Caveat|Cinzel|Noto+Sans+TC|Noto+Serif+TC&display=swap">
+    <style>
+      h1{
+        font-family: 'Caveat', cursive;
+        font-size: 38px;
+      }
+    </style>
+
+
+</head>
+<body>
+    <div class="container  mt-5">
+    <h1 class="h3 mb-3 font-weight-normal">點餐單管理</h1>
+    
+    <iframe name="returnWin" style="display: none;" onload="this.onload=function(){
+        window.location='ok.html'}"></iframe>
+
+    <form role="form" form target="returnWin" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScmLBCGtdM23_zxgXPh2gDiHKTFlGL_FT8V88btKqdZ0AQ4GQ/formResponse" method="post" id="myForm" >
+        <div class="row">         
+          <!--桌號-->              
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>桌號<span class="text-danger">*</span></label>
+              <select name="entry.1610597340" id="1610597340" value="" class="form-control" size="1" required>            
+                <option value="">請選擇桌號</option>
+                <option value="1號桌">1號桌</option>
+                <option value="2號桌">2號桌</option>
+                <option value="3號桌">3號桌</option>
+                <option value="4號桌">4號桌</option>
+                <option value="5號桌">5號桌</option>
+                <option value="6號桌">6號桌</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!--雞腿飯-90元-->              
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>雞腿飯-90元<span class="text-danger">(請下拉選數量)</span></label>
+              <input type="number" class="form-control" name="entry.649540171" id="649540171" value="0" min="0">
+            </div>
+          </div>          
+          <!--雞排飯-80元-->              
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>雞排飯-80元<span class="text-danger">(請下拉選數量)</span></label>
+              <input type="number" class="form-control" name="entry.72900850" id="72900850" value="0" min="0">
+            </div>
+          </div>          
+          <!--排骨飯-70元-->              
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>排骨飯-70元<span class="text-danger">(請下拉選數量)</span></label>
+              <input type="number" class="form-control" name="entry.1432044528" id="1432044528" value="0" min="0">
+            </div>
+          </div>          
+          <!--招牌飯-60元-->              
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>招牌飯-60元<span class="text-danger">(請下拉選數量)</span></label>
+              <input type="number" class="form-control" name="entry.525602890" id="525602890" value="0" min="0">
+            </div>
+          </div> 
+
+        </div> 
+        
+        <div class="row">
+          <div class="col-sm-12">  
+            <!-- 備註 -->
+            <div class="form-group">
+              <label class="control-label">備註</label>
+              <textarea class="form-control" rows="4" id="1953053465" name="entry.1953053465">如有過敏不要辣不要胡椒不要香菜或全素等需求請在此輸入</textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center pb-3">
+          <button type="submit" class="btn btn-primary">送出</button>
+        </div>
+      </form>
+   
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- 表單驗證 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script> 
+    <!-- Optional JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>   
+    <title>點餐購物管理</title>
+       <style> 
+       .error{color:red;}
+       </style>
+     <!-- 調用驗證方法 -->
+    <script>
+        $(document).ready(function(){
+            $("#myForm").validate({
+                submitHandler: function(form){
+                    form.submit(); 
+                    },
+                    rules:{
+                       'entry.1610597340':{ //桌號
+                           required: true
+                       } ,
+                        'entry.649540171' : {//雞腿飯
+                            digits:true ,
+                            min: 0
+                        },
+                        'entry.72900850' : {//雞排飯
+                            digits:true ,
+                            min: 0
+                        },
+                        'entry.1432044528' : {//排骨飯
+                            digits:true ,
+                            min: 0
+                        },
+                        'entry.525602890' : {//招牌飯
+                            digits:true ,
+                            min: 0
+                        }
+                       
+                    },   
+
+                    messages:{
+                        'entry.1610597340':{
+                           required: "請輸入桌號"
+                       } ,
+                       'entry.649540171':{//雞腿飯
+                           digits:"請填o或正整數",
+                           min:"請填o或正整數"
+                       },  
+                       'entry.72900850':{//雞排飯
+                           digits:"請填o或正整數",
+                           min:"請填o或正整數"
+                       }, 
+                       'entry.1432044528':{//排骨飯
+                           digits:"請填o或正整數",
+                           min:"請填o或正整數"
+                       }, 
+                       'entry.525602890':{//招牌飯
+                           digits:"請填o或正整數",
+                           min:"請填o或正整數"
+                       }, 
+                    },               
+            });
+        });
+    </script>   
+     
+  </body>
+</html>
+</body>
+</html>
+    
